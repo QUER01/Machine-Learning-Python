@@ -1,0 +1,22 @@
+#data_producer.py
+import numpy as np
+from sklearn.datasets.samples_generator import make_blobs
+import json
+from kafka import KafkaProducer
+from time import sleep
+ 
+
+producer = KafkaProducer(
+    bootstrap_servers='localhost:9091,localhost:9092')
+ 
+X, Y = make_blobs(n_samples=1200,n_features=2,centers=2, cluster_std=3.0)
+temp = np.zeros((X.shape[0],X.shape[1]+1))
+temp[:,:X.shape[1]]=X
+temp[:,X.shape[1]]=Y
+for row in temp:
+    message = json.dumps(dict([(i,x) for i,x in enumerate(row.tolist())]))
+    print(message)
+    message = str(message)
+    binary_message = message.encode('utf-8')
+    producer.send('simple-test2',binary_message)
+    sleep(0.05)

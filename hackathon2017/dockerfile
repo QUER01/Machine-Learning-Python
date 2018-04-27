@@ -1,0 +1,23 @@
+FROM python:3.6.1
+ 
+COPY . /usr/src/app
+
+WORKDIR /usr/src/app
+ENV HOME /usr/src/app
+
+# Install R
+#RUN apt-get update
+#RUN apt-get install r-base
+
+# Install uwsgi Python web server
+# RUN pip install uwsgi
+
+# Install app requirements
+RUN pip install -r requirements.txt
+
+
+CMD ["/bin/bash"]
+
+#ENTRYPOINT ["python"]
+#CMD ["app.py"]
+

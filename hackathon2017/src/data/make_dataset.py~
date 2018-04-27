@@ -1,0 +1,24 @@
+# -*- coding: utf-8 -*-
+
+# Import libraries
+import os
+import pandas as pd
+
+# Change working directory
+#path ='/home/ventum/SHB/'
+path =os.getcwd()
+#os.chdir(path)
+print(os.getcwd())
+
+
+# Load Trainngs and Test Data
+df_train = pd.read_csv("/data/raw/train.csv")
+df_test = pd.read_csv("/data/raw/test.csv")
+df_macro = pd.read_csv("/data/raw/macro.csv")
+
+
+df_train_macro = pd.merge(df_train,df_macro, how ='left', on =('timestamp','timestamp'))
+
+# Store data frame in folder
+df_train_macro.to_csv('/data/interim/train_macro.csv')
+

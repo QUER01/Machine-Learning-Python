@@ -1,0 +1,9 @@
+#simple_consumer.py
+from kafka import KafkaConsumer
+ 
+consumer = KafkaConsumer('online',  
+    group_id='test',
+    bootstrap_servers="localhost:9091,localhost:9092")
+ 
+for msg in consumer:
+    print(msg.value.decode('utf-8'))

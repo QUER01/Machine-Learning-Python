@@ -1,0 +1,32 @@
+#online_consumer.py
+import numpy as np
+from sklearn.linear_model import SGDClassifier
+from kafka import KafkaConsumer
+import json
+from sklearn.metrics import roc_auc_score
+ 
+n_features = 2
+ 
+clf = SGDClassifier(loss="hinge", alpha=0.01, n_iter=20, fit_intercept=True)
+ 
+consumer = KafkaConsumer('online',
+                          group_id='online-consumer',
+                          bootstrap_servers="localhost:9091,localhost:9092")
+ 
+count = 0
+correct = 0
+ 
+for msg in consumer:
+    data = json.loads(msg.value)
+    vec = np.zeros(len(data))
+    for key,value in data.iteritems():
+        vec[int(key)]=value
+    features = vec[:n_features].reshape(1,n_features)
+    target = [vec[n_features]]
+    if count > 1:
+        prediction = clf.predict(features)
+        correct += int(prediction[0]==int(target[0]))
+    if count > 2:
+        print correct/float(count-1)
+    clf.partial_fit(features, target,classes=[0,1])
+    count += 1

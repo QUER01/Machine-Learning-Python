@@ -1,0 +1,18 @@
+#simple_producer.py
+from kafka import KafkaProducer
+from time import sleep
+ 
+producer = KafkaProducer(
+    bootstrap_servers='localhost:9091,localhost:9092',
+    client_id='simple-producer')
+ 
+for i in range(120):
+    #msg =  "Message {}".format(i)
+    message = "Hello"  # str
+    binary_message = message.encode('utf-8')
+    
+   
+
+    producer.send('simple-test', type(binary_message))
+    sleep(1)
+
