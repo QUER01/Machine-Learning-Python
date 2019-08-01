@@ -109,20 +109,24 @@ def series_to_supervised(data, n_in=1, n_out=1, dropnan=True):
 
 
 df_tickers = getStockExchangeCodes(apiKey)
-df_tickers = df_tickers.loc[df_tickers['code'] == 'AIR_X']
+
+# AIR_X = Airbus
+# ALV_X = Allianz SE
+codes = ['AIR_X', 'ALV_X']
+df_tickers = df_tickers.loc[df_tickers['code'].isin(codes)]
 l_tickers = df_tickers['code'].tolist()
 print(l_tickers)
 
 df_stockHistory = getStockMarketData(apiKey, l_tickers)
 print(df_stockHistory)
 
-# keep only rows with at least 90% filled cells
-#df_stockHistoryCleaned = df_stockHistory.dropna(axis=0, thresh=(round(len(df_stockHistory.T)*0.90)))
-# keep only columns with at least 90% filled cells
-#df_stockHistoryCleaned = df_stockHistory.dropna(axis=1, thresh=(round(len(df_stockHistory)*0.90)))
+# keep only rows with at least 100% filled cells
+df_stockHistoryCleaned = df_stockHistory.dropna(axis=0, thresh=(round(len(df_stockHistory.T)*1)))
+# keep only columns with at least 100% filled cells
+df_stockHistoryCleaned = df_stockHistory.dropna(axis=1, thresh=(round(len(df_stockHistory)*1)))
 
 # Keep only Close values
-df_stockHistoryCleaned = df_stockHistory.filter(like='Close', axis=1)
+df_stockHistoryCleaned = df_stockHistoryCleaned.filter(like='Close', axis=1)
 
 
 
@@ -140,7 +144,7 @@ scaled = scaler.fit_transform(values)
 
 
 # Univariate forecasting problem (x(t-1),x)
-reframed = series_to_supervised(scaled, 10, 10)
+reframed = series_to_supervised(scaled, 10, 1)
 print(reframed.head())
 print(len(reframed))
 
@@ -190,8 +194,8 @@ inv_y = inv_y[:, 0]
 
 
 # plot prediction
-pyplot.plot(inv_yhat, label='prediction')
-pyplot.plot(inv_y, label='actual')
+pyplot.plot(inv_yhat, label='prediction for ' + codes[1])
+pyplot.plot(inv_y, label='actual ' +  codes[1])
 pyplot.legend()
 pyplot.show()
 
@@ -201,9 +205,6 @@ pyplot.show()
 # calculate RMSE
 rmse = math.sqrt(mean_squared_error(inv_y, inv_yhat))
 print('Test RMSE: %.3f' % rmse)
-
-
-
 
 
 

@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3862cdbd-d623-41d8-ac69-8f8785ea0b53" name="Default" comment="- incluede dynamic stock market data download">
+    <list default="true" id="3862cdbd-d623-41d8-ac69-8f8785ea0b53" name="Default" comment="- finalized version 1 of univariate forecasting">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FinanceModule/FinanceModule/financeModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/FinanceModule/FinanceModule/financeModule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FinanceModule/tickers.csv" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,12 +11,164 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-51438833">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="py" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Python" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="py" value="475" />
+          <entry key="txt" value="45" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="PLAIN_TEXT" value="45" />
+          <entry key="Python" value="475" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/FinanceModule/FinanceModule/financeModule.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="901">
+              <caret line="231" column="7" lean-forward="true" selection-start-line="231" selection-start-column="7" selection-end-line="231" selection-end-column="7" />
+              <folding>
+                <element signature="e#305#318#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/FinanceModule/FinanceModule/financeModule.py" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/flask-gentelella/app/base/static/vendors/Chart.js/package.json" />
+      <path value="$PROJECT_DIR$/flask-gentelella/app/base/static/vendors/DateJS/package.json" />
+      <path value="$PROJECT_DIR$/flask-gentelella/app/base/static/vendors/Flot/package.json" />
+      <path value="$PROJECT_DIR$/flask-gentelella/app/base/static/vendors/animate.css/package.json" />
+      <path value="$PROJECT_DIR$/flask-gentelella/app/base/static/vendors/autosize/package.json" />
+      <path value="$PROJECT_DIR$/flask-gentelella/app/base/static/vendors/bootstrap-daterangepicker/package.json" />
+      <path value="$PROJECT_DIR$/flask-gentelella/app/base/static/vendors/bootstrap-datetimepicker/package.json" />
+      <path value="$PROJECT_DIR$/flask-gentelella/app/base/static/vendors/bootstrap-progressbar/package.json" />
+      <path value="$PROJECT_DIR$/flask-gentelella/app/base/static/vendors/bootstrap-wysiwyg/package.json" />
+      <path value="$PROJECT_DIR$/flask-gentelella/app/base/static/vendors/bootstrap/package.json" />
+      <path value="$PROJECT_DIR$/flask-gentelella/app/base/static/vendors/cropper/package.json" />
+      <path value="$PROJECT_DIR$/flask-gentelella/app/base/static/vendors/devbridge-autocomplete/package.json" />
+      <path value="$PROJECT_DIR$/flask-gentelella/app/base/static/vendors/echarts/package.json" />
+      <path value="$PROJECT_DIR$/flask-gentelella/app/base/static/vendors/eve/package.json" />
+      <path value="$PROJECT_DIR$/flask-gentelella/app/base/static/vendors/flot-spline/package.json" />
+      <path value="$PROJECT_DIR$/flask-gentelella/app/base/static/vendors/ion.rangeSlider/package.json" />
+      <path value="$PROJECT_DIR$/flask-gentelella/app/base/static/vendors/jquery-knob/package.json" />
+      <path value="$PROJECT_DIR$/flask-gentelella/app/base/static/vendors/jquery.easy-pie-chart/package.json" />
+      <path value="$PROJECT_DIR$/flask-gentelella/app/base/static/vendors/jqvmap/package.json" />
+      <path value="$PROJECT_DIR$/flask-gentelella/app/base/static/vendors/jszip/package.json" />
+      <path value="$PROJECT_DIR$/flask-gentelella/app/base/static/vendors/morris.js/package.json" />
+      <path value="$PROJECT_DIR$/flask-gentelella/app/base/static/vendors/select2/package.json" />
+      <path value="$PROJECT_DIR$/flask-gentelella/app/base/static/vendors/starrr/package.json" />
+      <path value="$PROJECT_DIR$/flask-gentelella/app/base/static/vendors/switchery/package.json" />
+      <path value="$PROJECT_DIR$/flask-gentelella/app/base/static/vendors/transitionize/package.json" />
+      <path value="$PROJECT_DIR$/hackathon2017/static/vendors/Chart.js/package.json" />
+      <path value="$PROJECT_DIR$/hackathon2017/static/vendors/DateJS/package.json" />
+      <path value="$PROJECT_DIR$/hackathon2017/static/vendors/Flot/package.json" />
+      <path value="$PROJECT_DIR$/hackathon2017/static/vendors/animate.css/package.json" />
+      <path value="$PROJECT_DIR$/hackathon2017/static/vendors/autosize/package.json" />
+      <path value="$PROJECT_DIR$/hackathon2017/static/vendors/bootstrap-daterangepicker/package.json" />
+      <path value="$PROJECT_DIR$/hackathon2017/static/vendors/bootstrap-datetimepicker/package.json" />
+      <path value="$PROJECT_DIR$/hackathon2017/static/vendors/bootstrap-progressbar/package.json" />
+      <path value="$PROJECT_DIR$/hackathon2017/static/vendors/bootstrap-wysiwyg/package.json" />
+      <path value="$PROJECT_DIR$/hackathon2017/static/vendors/bootstrap/package.json" />
+      <path value="$PROJECT_DIR$/hackathon2017/static/vendors/cropper/package.json" />
+      <path value="$PROJECT_DIR$/hackathon2017/static/vendors/devbridge-autocomplete/package.json" />
+      <path value="$PROJECT_DIR$/hackathon2017/static/vendors/echarts/package.json" />
+      <path value="$PROJECT_DIR$/hackathon2017/static/vendors/eve/package.json" />
+      <path value="$PROJECT_DIR$/hackathon2017/static/vendors/flot-spline/package.json" />
+      <path value="$PROJECT_DIR$/hackathon2017/static/vendors/ion.rangeSlider/package.json" />
+      <path value="$PROJECT_DIR$/hackathon2017/static/vendors/jquery-knob/package.json" />
+      <path value="$PROJECT_DIR$/hackathon2017/static/vendors/jquery.easy-pie-chart/package.json" />
+      <path value="$PROJECT_DIR$/hackathon2017/static/vendors/jqvmap/package.json" />
+      <path value="$PROJECT_DIR$/hackathon2017/static/vendors/jszip/package.json" />
+      <path value="$PROJECT_DIR$/hackathon2017/static/vendors/morris.js/package.json" />
+      <path value="$PROJECT_DIR$/hackathon2017/static/vendors/select2/package.json" />
+      <path value="$PROJECT_DIR$/hackathon2017/static/vendors/starrr/package.json" />
+      <path value="$PROJECT_DIR$/hackathon2017/static/vendors/switchery/package.json" />
+      <path value="$PROJECT_DIR$/hackathon2017/static/vendors/transitionize/package.json" />
+    </packageJsonPaths>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
   <component name="ProjectId" id="1OlkwU0faXv97Dh0yMScO304MRO" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Machine-Learning-Python" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Machine-Learning-Python" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Machine-Learning-Python" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Machine-Learning-Python" type="462c0819:PsiDirectoryNode" />
+              <item name="FinanceModule" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Machine-Learning-Python" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Machine-Learning-Python" type="462c0819:PsiDirectoryNode" />
+              <item name="FinanceModule" type="462c0819:PsiDirectoryNode" />
+              <item name="FinanceModule" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -46,6 +197,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/FinanceModule/FinanceModule/financeModule.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -78,8 +230,50 @@
       <option name="project" value="LOCAL" />
       <updated>1564562922247</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="- finalized version 1 of univariate forecasting">
+      <created>1564689245611</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1564689245611</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <layout>
+      <window_info id="Project Explorer" />
+      <window_info id="Job Explorer" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Console" />
+      <window_info anchor="bottom" id="Docker" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" weight="0.32936078" />
+      <window_info anchor="bottom" id="Python Console" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="GitLabIntegration" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="R Packages" />
+      <window_info active="true" anchor="right" id="SciView" visible="true" weight="0.32995737" />
+      <window_info anchor="right" id="R Graphics" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -87,15 +281,51 @@
         <entry key="MAIN">
           <value>
             <State>
-              <option name="COLUMN_ORDER" />
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
             </State>
           </value>
         </entry>
       </map>
     </option>
   </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="- incluede dynamic stock market data download" />
-    <option name="LAST_COMMIT_MESSAGE" value="- incluede dynamic stock market data download" />
+    <MESSAGE value="- finalized version 1 of univariate forecasting" />
+    <option name="LAST_COMMIT_MESSAGE" value="- finalized version 1 of univariate forecasting" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/../ds_vorhersagemodelleschulung/Sourcecode/Python/Module 5 Deep Learning For Time Series/lstm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-211">
+          <caret line="98" column="37" selection-start-line="98" selection-start-column="13" selection-end-line="98" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FinanceModule/FinanceModule/financeModule.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="901">
+          <caret line="231" column="7" lean-forward="true" selection-start-line="231" selection-start-column="7" selection-end-line="231" selection-end-column="7" />
+          <folding>
+            <element signature="e#305#318#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
