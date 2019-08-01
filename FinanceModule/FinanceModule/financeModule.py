@@ -19,9 +19,13 @@ import math
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.metrics import mean_squared_error
 from keras.models import Sequential
+from keras.layers import Dropout
 from keras.layers import Dense
 from keras.layers import LSTM
+from keras.callbacks import EarlyStopping
+
 from matplotlib import pyplot
+
 apiKey = "fKx3jVSpXasnsXKGnovb"
 
 def getStockExchangeCodes(apiKey):
@@ -105,7 +109,8 @@ def series_to_supervised(data, n_in=1, n_out=1, dropnan=True):
 
 
 df_tickers = getStockExchangeCodes(apiKey)
-l_tickers = df_tickers['code'].head(10).tolist()
+df_tickers = df_tickers.loc[df_tickers['code'] == 'AIR_X']
+l_tickers = df_tickers['code'].tolist()
 print(l_tickers)
 
 df_stockHistory = getStockMarketData(apiKey, l_tickers)
@@ -131,11 +136,18 @@ values = values.astype('float32')
 scaler = MinMaxScaler(feature_range=(0, 1))
 scaled = scaler.fit_transform(values)
 # frame as supervised learning
-reframed = series_to_supervised(scaled, 1, 1)
+
+
+
+# Univariate forecasting problem (x(t-1),x)
+reframed = series_to_supervised(scaled, 10, 10)
 print(reframed.head())
+print(len(reframed))
+
+
 
 values = reframed.values
-n_train_hours = 365 * 5
+n_train_hours = round(len(reframed) * 0.7)
 train = values[:n_train_hours, :]
 test = values[n_train_hours:, :]
 # split into input and outputs
@@ -148,11 +160,20 @@ print(train_X.shape, train_y.shape, test_X.shape, test_y.shape)
 
 # design network
 model = Sequential()
-model.add(LSTM(50, input_shape=(train_X.shape[1], train_X.shape[2])))
+model.add(LSTM(200, input_shape=(train_X.shape[1], train_X.shape[2])))
+model.add(Dropout(0.2))
 model.add(Dense(1))
-model.compile(loss='mae', optimizer='adam')
+model.compile(loss='mean_squared_error', optimizer='adam')
 # fit network
-history = model.fit(train_X, train_y, epochs=50, batch_size=72, validation_data=(test_X, test_y), verbose=2, shuffle=False)
+history = model.fit(train_X, train_y, epochs=200, batch_size=72, validation_data=(test_X, test_y), verbose=2,
+                    callbacks=[EarlyStopping(monitor='val_loss', patience=10)] , shuffle=False)
+
+
+# plot history
+pyplot.plot(history.history['loss'], label='train')
+pyplot.plot(history.history['val_loss'], label='test')
+pyplot.legend()
+pyplot.show()
 
 # make a prediction
 yhat = model.predict(test_X)
@@ -166,10 +187,20 @@ test_y = test_y.reshape((len(test_y), 1))
 inv_y = np.concatenate((test_y, test_X[:, 1:]), axis=1)
 inv_y = scaler.inverse_transform(inv_y)
 inv_y = inv_y[:, 0]
+
+
+# plot prediction
+pyplot.plot(inv_yhat, label='prediction')
+pyplot.plot(inv_y, label='actual')
+pyplot.legend()
+pyplot.show()
+
+
+
+
 # calculate RMSE
 rmse = math.sqrt(mean_squared_error(inv_y, inv_yhat))
 print('Test RMSE: %.3f' % rmse)
-
 
 
 
